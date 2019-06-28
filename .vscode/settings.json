@@ -1,0 +1,5 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/home/dansish/.local/share/virtualenvs/Book_Donation-BMYNl3lj/bin/python"
+}
