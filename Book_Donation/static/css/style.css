@@ -1,0 +1,153 @@
+body {
+  margin-top: 105px;
+}
+
+.navbar {
+  box-shadow: 2px 2px 5px #3292a6;
+  opacity: 0.9;
+  background: #fff;
+}
+
+.navbar .nav-item {
+  font-size: 1.4rem;
+  padding-right: 1.4rem;
+}
+
+#showcase {
+  position: relative;
+  background: url('../img/mountains.jpg');
+  min-height: 700px;
+}
+
+#showcase .primary-overlay {
+  position: absolute;
+  background: rgba(50, 146, 166, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.info-header {
+  margin: auto;
+  width: 50%;
+  border-bottom: 1px #ddd solid;
+}
+
+#author img {
+  margin-top: -50px;
+}
+
+#author .card:hover {
+  background: #3292a6;
+  color: #fff;
+}
+
+#author .fab {
+  color: #fff;
+}
+
+.search-cont {
+  padding-top: 10px;
+}
+
+.search-cont .input-group input {
+  width: 100%;
+}
+
+.search-cont .input-group span {
+  padding: 8.6px;
+}
+
+#sidebar {
+  border-right: 1px solid #c5c5c9;
+  
+
+
+}
+
+#tutor-cont {
+  float: right;
+  padding-top: 20px;
+}
+
+#tutor-cont img {
+  width: 80%;
+}
+
+#tutor-cont .price {
+  float: right;
+  font: 18px 'oper sans';
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+#tutor-cont .btn {
+  width: 70%;
+}
+
+#tutor-cont .btn:hover {
+  background: #0d0d0e;
+  color: #ffffff;
+}
+
+#tutor-cont .card:hover {
+  background: #3292a6;
+  color: #fff;
+}
+
+#tutor-cont .fab {
+  color: #fff;
+}
+
+#p-t-2 {
+  padding-left: 420px;
+
+}
+
+#tutor-spec-breadcrumb {
+  border-bottom: 1px #c5c5c9 solid;
+}
+
+#tutor-spec-intro {
+  border-right: 1px #c5c5c9 solid;
+}
+
+#showcase-inner {
+  background: url('../img/mountains.jpg') no-repeat top center fixed/cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+#showcase-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background: rgba(32, 134, 107, 0.8);
+}
+
+#showcase-inner.showcase-search {
+  min-height: 270px;
+}
+
+.book .book-pic{
+  border-right:1px solid #c5c5c9;
+}
+
+@media (max-width: 768px) {
+  #showcase {
+    min-height: 500px;
+  }
+
+  #showcase h1 {
+    font-size: 4rem;
+  }
+
+  .mb-resp {
+    margin-bottom: 1rem;
+  }
+}
