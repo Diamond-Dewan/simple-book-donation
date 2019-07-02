@@ -37,7 +37,7 @@
             Why This System?
           </h1>
           <p class="lead pb3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ipsam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ipsam.
           </p>
         </div>
         <!--accordion-->
@@ -53,7 +53,7 @@
             </div>
             <div id="collapse1" class="collapse show">
               <div class="card-header">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, odio? Quas voluptates mollitia similique cum, harum, quis impedit eligendi molestias at vitae, ratione repellat. Quam quas nesciunt, laborum reprehenderit omnis itaque ab cum veniam? Quasi blanditiis vitae impedit facere iure sint voluptas, quae corporis similique facilis explicabo pariatur molestiae minima!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, odio? Quas voluptates mollitia similique cum, harum, quis impedit eligendi molestias at vitae, ratione repellat. Quam quas nesciunt, laborum reprehenderit omnis itaque ab cum veniam? Quasi blanditiis vitae impedit facere iure sint voluptas, quae corporis similique facilis explicabo pariatur molestiae minima!
               </div>
             </div>
 
@@ -66,7 +66,7 @@
             </div>
             <div id="collapse2" class="collapse show">
               <div class="card-header">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, odio? Quas voluptates mollitia similique cum, harum, quis impedit eligendi molestias at vitae, ratione repellat. Quam quas nesciunt, laborum reprehenderit omnis itaque ab cum veniam? Quasi blanditiis vitae impedit facere iure sint voluptas, quae corporis similique facilis explicabo pariatur molestiae minima!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, odio? Quas voluptates mollitia similique cum, harum, quis impedit eligendi molestias at vitae, ratione repellat. Quam quas nesciunt, laborum reprehenderit omnis itaque ab cum veniam? Quasi blanditiis vitae impedit facere iure sint voluptas, quae corporis similique facilis explicabo pariatur molestiae minima!
               </div>
             </div>
 
@@ -101,7 +101,7 @@
       <div class="col">
         <div class="info-header mb-5">
         <h1 class="text-primary pb-3">
-        Meet Our Top Donators
+        Meet Our Top Users
         </h1>
         <p class="lead pb-3">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet at porro similique exercitationem nihil placeat veritatis dolore voluptatem, molestiae explicabo.
@@ -114,141 +114,43 @@
     <div class="row">
 
       <!-- person1 -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card">
-           <div class="card-body">
-             <img src="{% static 'img/person1.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-3">
-             <h3>Susan Williams</h3>
-             <h5 class="text-muted">Dhaka</h5>
-             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis est assumenda reprehenderit fugit eius, voluptatem quae quis labore natus facere?</p>
-             <div class="d-flex justify-content-center">
+      {% if users %}
+        {% for user in users %}
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <div class="card-body"> 
+                <img src="{{user.photo.url}}" alt="" class="img-fluid rounded-circle w-50 h-25 mb-3">
+                <h3>{{user.first_name}}</h3>
+                <h5 class="text-muted">{{user.address}}</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis est assumenda reprehenderit fugit eius, voluptatem quae quis labore natus facere?</p>
+                <div class="d-flex justify-content-center">
+                  <div class="p-4">
+                    <a href="#">
+                    <i class="fab fa-facebook"></i>
+                    </a>
+                  </div>
+                  
+                  <div class="p-4">
+                    <a href="#">
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                  </div>
 
-               <div class="p-4">
-                 <a href="http://facebook.com">
-                 <i class="fab fa-facebook"></i>
-                 </a>
-               </div>
-               
-               <div class="p-4">
-                 <a href="http://twitter.com">
-                 <i class="fab fa-twitter"></i>
-                 </a>
-               </div>
-
-               <div class="p-4">
-                 <a href="http://instagram.com">
-                 <i class="fab fa-instagram"></i>
-                 </a>
-               </div>
-
-              
-
-             </div> 
-           </div>
-         </div>   
-      </div>
-      
-      <!-- person2 -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card">
-           <div class="card-body">
-             <img src="{% static 'img/person2.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-3">
-             <h3>Grace Smith</h3>
-             <h5 class="text-muted">Cumilla</h5>
-             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis est assumenda reprehenderit fugit eius, voluptatem quae quis labore natus facere?</p>
-             <div class="d-flex justify-content-center">
-
-               <div class="p-4">
-                 <a href="http://facebook.com">
-                 <i class="fab fa-facebook"></i>
-                 </a>
-               </div>
-               
-               <div class="p-4">
-                 <a href="http://twitter.com">
-                 <i class="fab fa-twitter"></i>
-                 </a>
-               </div>
-
-               <div class="p-4">
-                 <a href="http://instagram.com">
-                 <i class="fab fa-instagram"></i>
-                 </a>
-               </div>
-
-              
-
-             </div> 
-           </div>
-         </div>   
-      </div>
-
-      <!-- person3 -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card">
-           <div class="card-body">
-             <img src="{% static 'img/person3.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-3">
-             <h3>John Doe</h3>
-             <h5 class="text-muted">Chittagong</h5>
-             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis est assumenda reprehenderit fugit eius, voluptatem quae quis labore natus facere?</p>
-             <div class="d-flex justify-content-center">
-
-               <div class="p-4">
-                 <a href="http://facebook.com">
-                 <i class="fab fa-facebook"></i>
-                 </a>
-               </div>
-               
-               <div class="p-4">
-                 <a href="http://twitter.com">
-                 <i class="fab fa-twitter"></i>
-                 </a>
-               </div>
-
-               <div class="p-4">
-                 <a href="http://instagram.com">
-                 <i class="fab fa-instagram"></i>
-                 </a>
-               </div>
-
-              
-
-             </div> 
-           </div>
-         </div>   
-      </div>
-
-      <!-- person4 -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card">
-           <div class="card-body">
-             <img src="{% static 'img/person4.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-3">
-             <h3>Kevin Swanson</h3>
-             <h5 class="text-muted">Sylhet</h5>
-             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis est assumenda reprehenderit fugit eius, voluptatem quae quis labore natus facere?</p>
-             <div class="d-flex justify-content-center">
-
-               <div class="p-4">
-                 <a href="http://facebook.com">
-                 <i class="fab fa-facebook"></i>
-                 </a>
-               </div>
-               
-               <div class="p-4">
-                 <a href="http://twitter.com">
-                 <i class="fab fa-twitter"></i>
-                 </a>
-               </div>
-
-               <div class="p-4">
-                 <a href="http://instagram.com">
-                 <i class="fab fa-instagram"></i>
-                 </a>
-               </div>
-             </div> 
-           </div>
-         </div>   
-      </div>
+                  <div class="p-4">
+                    <a href="#">
+                    <i class="fab fa-instagram"></i>
+                    </a>
+                  </div>
+                </div> 
+              </div>
+            </div>   
+          </div>
+          
+        {% endfor %}
+        
+      {% else %}
+        <p>No users to show</p>
+      {% endif %}
     </div>
   </div>
 </section>

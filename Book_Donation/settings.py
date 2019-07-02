@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
     'authors.apps.AuthorsConfig',
-    'accounts.apps.AccountsConfig',
+    # 'accounts.apps.AccountsConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,6 +136,6 @@ MEDIA_URL = '/media/'
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
-    
-    
 }
+# custom user model
+AUTH_USER_MODEL = 'users.User'

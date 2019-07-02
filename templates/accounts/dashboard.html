@@ -31,70 +31,84 @@
         <!-- Alerts -->
         {% include "partials/_alerts.html" %}
         
-        <section id="dashboard" class="py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Welcome </h2>
-                        <p>Here are the Book listings that you have inquired about</p>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Property</th>
-                                <th></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Book Of Tea</td>
-                                    <td>
-                                        <a class="btn btn-light" href="">View Listing</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <section class="book mb-5">
+          <div class="container">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 book-pic">
+                    {% if user.is_authenticated %}
+                        <img style="width: 200px" src="{{user.photo.url}}" alt=""> 
+                        <h3>{{user.first_name}} {{user.last_name}} </h3>
+                        <p><strong>Email:</strong>{{user.email}}</p>
+                        <p><strong>Phone:</strong>{{user.phone}}</p>
+                        <p><strong>Address:</strong>{{user.address}}</p>
+                        <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Inquiry</button> -->
+                    {% endif %}
                 </div>
-            </div>
-        </section>
-        
-        <section id="wishlist" class="py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>Here are the Wishlist of Books</p>
+                <div class="col">
+                    <div class="col-md-3 col-lg-12">
+                      <h3>Woned books:</h3>
                         <table class="table">
-                            <thead>
+                          <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Property</th>
-                                <th></th>
+                              <th class="">Book Title</th>
+                              <th>Request</th>
                             </tr>
-                            </thead>
-                            <tbody>
+                          </thead>
+                          <tbody>
+                            {% if user_books %}
+                              {% for book in user_books %}
                                 <tr>
-                                    <td>1</td>
-                                    <td>Book Of Tea</td>
-                                    <td>
-                                        <a class="btn btn-light" href="">View Listing</a>
-                                    </td>
+                                  <!-- <td><img style="height:100px;" src="{{ book.cover_photo.url }}" alt="" class="img-fluid  mb-3"></td> -->
+                                  <td>{{book}} </td>
+                                  <td>
+                                    <form action="delete-user-book/{{book.id}}" method="POST">{% csrf_token %}
+                                      <input type="submit" value="Remove" class="btn btn-danger btn-block">
+                                    </form>
+                                  </td>
                                 </tr>
-                            </tbody>
-                        </table>
-            
-                        <form class="form-inline">
-                        
-                        <div class="form-group mx-sm-3 mb-2">   
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2">Confirm </button>
-                        </form>
+                                  
+                              {% endfor %}
+                            {% else %}
+                                No books listed!!
+                            {% endif %}
+                        </tbody>
+                      </table>
                     </div>
-                </div>
+                </div> 
+      
+                <div class="col">
+                  <div class="col-md-3 col-lg-12">
+                    <h3>Wished books:</h3>
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Wish List</th>
+                              <th>Remove</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% if user_wished_books %}
+                              {% for book in user_wished_books %}
+                                <tr>
+                                  <!-- <td><img style="height:100px;" src="{{ book.cover_photo.url }}" alt="" class="img-fluid  mb-3"></td> -->
+                                  <td>{{book}} </td>
+                                  <td>
+                                    <form action="delete-user-wished-book/{{book.id}}" method="POST">{% csrf_token %}
+                                      <input type="submit" value="Remove" class="btn btn-danger btn-block">
+                                    </form>
+                                  </td>
+                                </tr>
+                                  
+                              {% endfor %}
+                            {% else %}
+                                No books listed!!
+                            {% endif %}
+                        </tbody>
+                      </table>
+                  </div>
+                </div>  
             </div>
+          </div>
         </section>
 
     {% include "partials/_footer.html" %}
